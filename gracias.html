@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¡Gracias por tu compra! | Chef Jenny Camacho</title>
+    
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '823271266193111');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=823271266193111&ev=PageView&noscript=1"
+    /></noscript>
+    <style>
+        /* =========================================
+           VARIABLES DE COLOR Y ESTILOS BASE
+           ========================================= */
+        :root {
+            --bg-cream: #ede7d4;
+            --bg-pink: #f6ccda;
+            --text-dark: #452c29;
+            --heading-green: #2d371d;
+            --accent-lime: #d8df80;
+            --cta-magenta: #8c2e66;
+            
+            --wpp-green: #25D366;
+            --wpp-hover: #128C7E;
+
+            --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --font-serif: 'Playfair Display', Georgia, serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-main);
+            /* Fondo premium con iluminación superior */
+            background-color: var(--text-dark);
+            background-image: radial-gradient(circle at 50% -20%, #724945 0%, var(--text-dark) 70%);
+            color: var(--bg-cream);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+
+        /* =========================================
+           DISEÑO GLASSMORPHISM (CRISTAL)
+           ========================================= */
+        .glass-panel {
+            max-width: 750px;
+            width: 100%;
+            padding: 60px 40px;
+            background: rgba(255, 255, 255, 0.03); /* Transparencia ultra sutil */
+            backdrop-filter: blur(15px); /* Efecto de cristal */
+            -webkit-backdrop-filter: blur(15px);
+            border-radius: 24px;
+            border: 1px solid rgba(255, 255, 255, 0.08); /* Borde luminoso */
+            box-shadow: 0 30px 60px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.1);
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Esferas de luz difuminadas de fondo para dar profundidad */
+        body::before, body::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            opacity: 0.4;
+        }
+        body::before {
+            width: 300px; height: 300px;
+            background: var(--cta-magenta);
+            top: -100px; left: -100px;
+        }
+        body::after {
+            width: 250px; height: 250px;
+            background: var(--accent-lime);
+            bottom: -50px; right: -50px;
+        }
+
+        /* =========================================
+           TIPOGRAFÍA Y COPY
+           ========================================= */
+        h1 {
+            font-family: var(--font-serif);
+            font-size: 3.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            /* Texto con gradiente elegante */
+            background: linear-gradient(to right, #ffffff, var(--bg-cream));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        p {
+            font-size: 1.25rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+        }
+
+        /* Caja de Alerta Premium */
+        .alert-box {
+            background: rgba(216, 223, 128, 0.1); /* Fondo sutil verde lima */
+            border-left: 4px solid var(--accent-lime);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 35px auto;
+            max-width: 90%;
+        }
+
+        .alert-text {
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 2px;
+            font-size: 1.1rem;
+            color: var(--accent-lime);
+            margin: 0;
+        }
+
+        .footer-text {
+            font-size: 1rem;
+            opacity: 0.6;
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        /* =========================================
+           BOTÓN WHATSAPP MAGNÉTICO
+           ========================================= */
+        .btn-wpp {
+            position: relative;
+            display: inline-block;
+            width: 100%;
+            max-width: 420px;
+            background-color: #ffffff;
+            color: var(--text-dark);
+            text-decoration: none;
+            padding: 20px 25px;
+            font-size: 1.3rem;
+            font-weight: 900;
+            border-radius: 12px;
+            margin: 15px 0;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            overflow: hidden;
+        }
+
+        /* Efecto de destello (Shine) barriendo el botón */
+        .btn-wpp::after {
+            content: '';
+            position: absolute;
+            top: 0; left: -100%; width: 50%; height: 100%;
+            background: linear-gradient(to right, rgba(255,255,255,0) 0%, rgba(255,255,255,0.8) 50%, rgba(255,255,255,0) 100%);
+            transform: skewX(-25deg);
+            animation: shine 4s infinite;
+        }
+
+        .btn-wpp:hover {
+            transform: translateY(-5px) scale(1.02);
+            background-color: var(--wpp-green);
+            color: #ffffff;
+            box-shadow: 0 20px 40px rgba(37, 211, 102, 0.4);
+            border-radius: 50px;
+        }
+
+        /* =========================================
+           ANIMACIONES EN CASCADA (STAGGERED)
+           ========================================= */
+        .animate-1, .animate-2, .animate-3, .animate-4, .animate-5 {
+            opacity: 0;
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+        
+        /* Retrasos para que aparezcan uno por uno */
+        .animate-1 { animation-delay: 0.2s; }
+        .animate-2 { animation-delay: 0.5s; }
+        .animate-3 { animation-delay: 0.8s; }
+        .animate-4 { animation-delay: 1.1s; }
+        .animate-5 { animation-delay: 1.4s; }
+
+        @keyframes fadeInUp {
+            0% { opacity: 0; transform: translateY(40px); }
+            100% { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes shine {
+            0% { left: -100%; }
+            20% { left: 200%; }
+            100% { left: 200%; }
+        }
+
+        /* =========================================
+           RESPONSIVE (MÓVILES)
+           ========================================= */
+        @media (max-width: 600px) {
+            .glass-panel { padding: 40px 20px; }
+            h1 { font-size: 2.5rem; }
+            p { font-size: 1.1rem; }
+            .alert-text { font-size: 0.95rem; }
+            .btn-wpp { font-size: 1.1rem; padding: 18px 15px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="glass-panel">
+        <h1 class="animate-1">¡Gracias por tu compra!</h1>
+        
+        <p class="animate-2">En breve, recibirás un correo con el acceso directo al recetario...</p>
+        
+        <div class="alert-box animate-3">
+            <p class="alert-text">PERO... ¡FALTA UN PASO MÁS! 🚨<br>ES MUY IMPORTANTE</p>
+        </div>
+        
+        <p class="animate-4">Debes unirte ahora al grupo de WhatsApp llamado <strong>"Grupo VIP - Altar Creativo"</strong> en el siguiente enlace de aqui abajo...</p>
+        
+        <a href="https://chat.whatsapp.com/IauMbAHcG3xFZQeAvpwpIG?mode=gi_t" class="btn-wpp animate-4">
+            ¡UNIRME AL GRUPO DE WHATSAPP!
+        </a>
+        
+        <p class="footer-text animate-5">Aqui vas a recibir tips, secretos, consejos y mucho más...</p>
+    </div>
+
+</body>
+</html>
